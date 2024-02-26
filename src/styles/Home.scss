@@ -1,0 +1,94 @@
+// Define SCSS variables for colors
+:root {
+    --color-1: #FFFFFF; // White
+    --color-2: #3957FF; // Blue
+    --color-3: #212025; // Dark Gray
+}
+
+// Styles for the home container
+.home-container {
+    min-width: 100vw; // Minimum width is the viewport width
+    min-height: 100vh; // Minimum height is the viewport height
+    overflow: hidden; 
+    position: relative;
+
+    // Styles for the background image
+    .background-image {
+        top: 0;
+        left: 0;
+        position: absolute; // Position the background absolutely
+        width: 100%; // Cover the entire width
+        height: 100%; // Cover the entire height
+        opacity: 0.2;
+        z-index: -99;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../assets/logo.png');
+    }
+
+    // Styles for the text section
+    .home-text-section {
+        z-index: 99;
+        top: 50%; // Position vertically at 50% from the top
+        left: 50%; // Position horizontally at 50% from the left
+        position: absolute; // Position the text absolutely
+        text-align: center;
+        transform: translate(-50%, -50%); // Center the text both horizontally and vertically
+
+        // Styles for the heading 1
+        h1 {
+            color: var(--color-2); 
+            font-size: 7rem;
+            font-weight: 900;
+            word-spacing: normal;
+            letter-spacing: 0.3rem;
+            text-transform: capitalize;
+        }
+
+        // Styles for the heading 2
+        h2 {
+            color: var(--color-3);
+            font-size: 4rem;
+            font-weight: 700;
+            word-spacing: normal;
+            letter-spacing: 0.2rem;
+            text-transform: capitalize;
+            text-decoration: underline;
+        }
+    }
+
+    // Media Queries for responsiveness
+    @media (max-width: 1200px) {
+        .home-text-section {
+            h1 {
+                font-size: 5rem;
+            }
+            h2 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        .home-text-section {
+            h1 {
+                font-size: 4rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .home-text-section {
+            h1 {
+                font-size: 3rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
